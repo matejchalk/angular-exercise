@@ -1,0 +1,238 @@
+:host {
+  display: flex;
+  width: 100%;
+}
+
+app-filters {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 400px;
+  margin-left: 30px;
+}
+
+main {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#main-heading {
+  display: flex;
+  align-items: center;
+}
+
+#main-heading > * {
+  margin-right: 15px;
+}
+
+#type {
+  font-size: x-large;
+  color: blue;
+  display: flex;
+  align-items: center;
+}
+
+#total, #sort-by label {
+  color: grey;
+}
+
+#sort-by {
+  display: flex;
+  align-items: center;
+}
+
+#sort-by label {
+  margin-right: 5px;
+}
+
+#filter {
+  padding: 10px 49px 10px 15px;
+  color: blue;
+  border: none;
+  border-radius: 5px;
+  background: white url("../../assets/filter.png") no-repeat calc(100% - 15px) 50%;
+}
+
+#filter.enabled {
+  background-color: lightblue;
+}
+
+section > * {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+section > * > *:nth-child(1) {
+  width: 75px;
+}
+
+section > * > *:nth-child(2) {
+  width: calc(100% - 815px);
+}
+
+section > * > *:nth-child(3) {
+  width: 150px;
+}
+
+section > * > *:nth-child(4),
+section > * > *:nth-child(5) {
+  width: 80px;
+}
+
+section > * > *:nth-child(6) {
+  width: 200px;
+}
+
+section > * > *:nth-child(7) {
+  width: 120px;
+}
+
+section > * > *:nth-child(8) {
+  width: 100px;
+}
+
+section > * > *:nth-child(9) {
+  width: 50px;
+}
+
+section header {
+  font-size: small;
+  color: grey;
+}
+
+.add div {
+  background-color: white;
+  text-align: center;
+  font-size: large;
+  width: 25px;
+  line-height: 25px;
+  border-radius: 10%;
+}
+
+.page-switcher {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-switcher button {
+  background-color: white;
+  border: none;
+  border-radius: 10%;
+  width: 22px;
+  height: 22px;
+}
+
+.page-switcher button:disabled {
+  opacity: 0.2;
+}
+
+.page-switcher button.left {
+  background: url('../../assets/arrow-left.png') 50% 50%;
+}
+
+.page-switcher button.right {
+  background: url('../../assets/arrow-right.png') 50% 50%;
+}
+
+section > div {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listing-name {
+  display: flex;
+  align-items: center;
+}
+
+.listing-name img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-right: 12px;
+}
+
+.listing-name div {
+  width: calc(100% - 62px);
+}
+
+.listing-name .name, .listing-name .location {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.listing-name .location {
+  font-size: small;
+  color: grey;
+}
+
+.trip-date {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.travellers {
+  display: flex;
+  align-items: center;
+}
+
+.travellers img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+[class^="status"] span {
+  padding: 3px 10px;
+}
+
+.status-accepted span {
+  color: green;
+  background-color: lightgreen;
+}
+
+.status-expired span {
+  color: grey;
+  background-color: lightgrey;
+}
+
+.status-canceled span {
+  color: red;
+  background-color: hotpink;
+}
+
+.status-declined span {
+  color: blue;
+  background-color: lightblue;
+}
+
+.extra button {
+  cursor: pointer;
+  border: none;
+  background: white url('../../assets/ellipsis.png');
+  width: 24px;
+  height: 24px;
+}
+

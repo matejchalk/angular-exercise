@@ -1,0 +1,16 @@
+<header (click)="show = !show" (mouseenter)="endTimer(); show = !requireClick || show" (mouseleave)="startTimer()">
+  <span #ref><ng-content></ng-content></span>
+  <span *ngIf="ref.childNodes.length === 0">{{ value }}</span>
+  <button *ngIf="!hideIcon"></button>
+</header>
+<div id="wrapper">
+  <aside [class.show]="show" (mouseenter)="endTimer()" (mouseleave)="startTimer()">
+    <div
+      *ngFor="let option of options; let i = index"
+      class="option"
+      [class.active]="active === i"
+      (click)="select(i)"
+      (mouseenter)="active = i"
+      (mouseleave)="active = null">{{ option }}</div>
+  </aside>
+</div>

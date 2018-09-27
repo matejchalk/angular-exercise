@@ -1,0 +1,6 @@
+<div [class.collapsed]="!show">
+  <button (click)="show = !show" class="{{ show ? 'collapse' : 'expand' }}"></button>
+  <main [@collapseExpand]="show ? 'expanded' : 'collapsed'">
+    <ng-content></ng-content>
+  </main>
+</div>
