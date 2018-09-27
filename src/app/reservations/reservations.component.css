@@ -65,47 +65,47 @@ main {
   background-color: lightblue;
 }
 
-section > * {
+form > * {
   display: flex;
   margin-bottom: 10px;
   align-items: center;
   width: 100%;
 }
 
-section > * > *:nth-child(1) {
+form > * > *:nth-child(1) {
   width: 75px;
 }
 
-section > * > *:nth-child(2) {
+form > * > *:nth-child(2) {
   width: calc(100% - 815px);
 }
 
-section > * > *:nth-child(3) {
+form > * > *:nth-child(3) {
   width: 150px;
 }
 
-section > * > *:nth-child(4),
-section > * > *:nth-child(5) {
+form > * > *:nth-child(4),
+form > * > *:nth-child(5) {
   width: 80px;
 }
 
-section > * > *:nth-child(6) {
+form > * > *:nth-child(6) {
   width: 200px;
 }
 
-section > * > *:nth-child(7) {
+form > * > *:nth-child(7) {
   width: 120px;
 }
 
-section > * > *:nth-child(8) {
+form > * > *:nth-child(8) {
   width: 100px;
 }
 
-section > * > *:nth-child(9) {
+form > * > *:nth-child(9) {
   width: 50px;
 }
 
-section header {
+form header {
   font-size: small;
   color: grey;
 }
@@ -144,7 +144,7 @@ section header {
   background: url('../../assets/arrow-right.png') 50% 50%;
 }
 
-section > div {
+form > div {
   background-color: white;
   border-radius: 10px;
   padding: 10px 0;

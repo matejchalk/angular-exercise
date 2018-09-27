@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { startWith, takeUntil } from 'rxjs/operators';
 
@@ -16,7 +16,7 @@ interface DatePickOptions {
 })
 export class FiltersComponent implements OnInit, OnDestroy {
   @Output() filtersChange = new EventEmitter<any>();
-  filtersForm: FormGroup = this.fb.group({
+  filtersForm = this.fb.group({
     tripDate: this.fb.group({
       checkInDate: null,
       checkOutDate: null

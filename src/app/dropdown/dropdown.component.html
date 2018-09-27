@@ -1,6 +1,6 @@
 <header (click)="show = !show" (mouseenter)="endTimer(); show = !requireClick || show" (mouseleave)="startTimer()">
-  <span #ref><ng-content></ng-content></span>
-  <span *ngIf="ref.childNodes.length === 0">{{ value }}</span>
+  <div #ref><ng-content></ng-content></div>
+  <div *ngIf="ref.childNodes.length === 0">{{ value }}</div>
   <button *ngIf="!hideIcon"></button>
 </header>
 <div id="wrapper">

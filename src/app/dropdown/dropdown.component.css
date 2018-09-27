@@ -1,5 +1,10 @@
-header {
+:host {
   display: inline-flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
   align-items: center;
   cursor: pointer;
 }

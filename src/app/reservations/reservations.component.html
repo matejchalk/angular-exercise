@@ -12,10 +12,10 @@
     </div>
     <button id="filter" [class.enabled]="filterEnabled" (click)="toggleFilterEnabled()">Filter</button>
   </div>
-  <section>
+  <form [formGroup]="form">
     <header>
       <div class="add">
-        <app-dropdown [options]="actions" (valueChange)="performAction($event)" [hideIcon]="true">
+        <app-dropdown [options]="bulkActions" (valueChange)="performBulkAction($event)" [hideIcon]="true">
           <div>+</div>
         </app-dropdown>
       </div>
@@ -33,7 +33,7 @@
     </header>
     <div *ngFor="let reservation of pages[currentPage]">
       <div class="select">
-        <app-checkbox></app-checkbox>
+        <app-checkbox [formControlName]="'reservation' + reservation.id"></app-checkbox>
       </div>
       <div class="listing-name">
         <img alt="[IMG]" src="https://cdn3.i-scmp.com/sites/default/files/images/methode/2017/08/16/243f89e0-8235-11e7-a767-bc310e55dd10_1320x770_154749.jpg" />
@@ -62,12 +62,12 @@
         <span>{{ reservation.status }}</span>
       </div>
       <div class="extra">
-        <app-dropdown [options]="actions" (valueChange)="performAction($event, reservation)" [hideIcon]="true" [requireClick]="true">
+        <app-dropdown [options]="singleActions" (valueChange)="performSingleAction($event, reservation)" [hideIcon]="true" [requireClick]="true">
           <button></button>
         </app-dropdown>
       </div>
     </div>
-  </section>
+  </form>
 </main>
 
 <app-filters (filtersChange)="updateFilters($event)"></app-filters>

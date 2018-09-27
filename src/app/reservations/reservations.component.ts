@@ -1,9 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { forkJoin, from, interval, Subject } from 'rxjs';
+import { map, mergeMap, skip, take, takeUntil, takeWhile, toArray } from 'rxjs/operators';
 
 import { ReservationsService } from '../reservations.service';
 import { Reservation, Status } from '../reservations';
-import { forkJoin, from, interval, Subject } from 'rxjs';
-import { map, mergeMap, skip, take, takeUntil, takeWhile, toArray } from 'rxjs/operators';
 import { Currency, CurrencyService } from '../currency.service';
 
 enum SortKey {
@@ -15,7 +16,13 @@ enum SortKey {
   Status = 'Status'
 }
 
-enum Action {
+enum BulkAction {
+  SelectAll = 'Select All',
+  ClearAll = 'Clear All',
+  DeleteSelected = 'Delete Selected'
+}
+
+enum SingleAction {
   Delete = 'Delete'
 }
 
@@ -32,14 +39,17 @@ export class ReservationsComponent implements OnDestroy {
   filterEnabled = true;
   sortKey: SortKey;
   sortKeys = Object.values(SortKey);
-  actions = Object.values(Action);
+  bulkActions = Object.values(BulkAction);
+  singleActions = Object.values(SingleAction);
   currency: Currency;
   filters: any = null;
+  form: FormGroup = this.fb.group({});
   unsubscribe$ = new Subject<void>();
 
   constructor(
     private reservationService: ReservationsService,
-    private currencyService: CurrencyService
+    private currencyService: CurrencyService,
+    private fb: FormBuilder
   ) {
     this.updateReservations();
     this.currencyService.currency$
@@ -63,6 +73,11 @@ export class ReservationsComponent implements OnDestroy {
       .subscribe((reservations: Reservation[]) => {
         this.reservations = reservations;
         this.pagesFromReservations();
+        this.form = this.fb.group(
+          reservations
+            .map(reservation => 'reservation' + reservation.id)
+            .reduce((acc, key) => ({ ...acc, [key]: this.form.value[key] || false }), {})
+        );
       });
   }
 
@@ -80,11 +95,11 @@ export class ReservationsComponent implements OnDestroy {
     this.updateReservations();
   }
 
-  pagesFromReservations(reservations?: Reservation[]): void {
+  pagesFromReservations(): void {
     interval(0)
       .pipe(
         mergeMap(i => {
-          return from(reservations || this.reservations)
+          return from(this.reservations)
             .pipe(
               skip(i * this.pageLimit),
               take(this.pageLimit),
@@ -130,19 +145,47 @@ export class ReservationsComponent implements OnDestroy {
     this.currentPage++;
   }
 
-  performAction(action: Action, reservation?: Reservation): void {
-    const reservations = reservation ? [reservation] : [];
+  performSingleAction(action: SingleAction, reservation: Reservation): void {
     switch (action) {
-      case Action.Delete:
-        forkJoin(
-          reservations
-            .map(reservation => reservation.id)
-            .map(this.reservationService.deleteReservation)
-        )
-          .pipe(takeUntil(this.unsubscribe$))
-          .subscribe(_ => this.updateReservations());
+      case SingleAction.Delete:
+        this.deleteReservations([reservation]);
         break;
     }
+  }
+
+  performBulkAction(action: BulkAction): void {
+    switch (action) {
+      case BulkAction.SelectAll:
+        this.form.setValue(
+          this.reservations
+            .map(reservation => 'reservation' + reservation.id)
+            .reduce((acc, key) => ({ ...acc, [key]: true }), {})
+        );
+        break;
+      case BulkAction.ClearAll:
+        this.form.setValue(
+          this.reservations
+            .map(reservation => 'reservation' + reservation.id)
+            .reduce((acc, key) => ({ ...acc, [key]: false }), {})
+        );
+        break;
+      case BulkAction.DeleteSelected:
+        this.deleteReservations(
+          this.reservations
+            .filter(reservation => this.form.value['reservation' + reservation.id])
+        );
+        break;
+    }
+  }
+
+  deleteReservations(reservations: Reservation[]): void {
+    forkJoin(
+      reservations
+        .map(reservation => reservation.id)
+        .map(this.reservationService.deleteReservation)
+    )
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(_ => this.updateReservations());
   }
 
   sortReservations(reservations: Reservation[]): Reservation[] {
@@ -189,7 +232,6 @@ export class ReservationsComponent implements OnDestroy {
       return compare(key1, key2);
     };
 
-    console.log(this.sortKey, [...reservations].sort(compareKeys));
     return [...reservations].sort(compareKeys);
   }
 
