@@ -1,0 +1,24 @@
+.nav {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+}
+
+.main {
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .toolbar {
+    flex-basis: 70px;
+    flex-shrink: 0;
+  }
+
+  .outlet {
+    flex-basis: 100%;
+    overflow: auto;
+    display: flex;
+    padding: 30px;
+  }
+}

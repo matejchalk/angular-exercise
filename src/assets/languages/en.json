@@ -1,0 +1,64 @@
+{
+  "lang": {
+    "en": "English",
+    "cs": "Czech"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "inbox": "Inbox",
+    "trips": "Trips",
+    "myListings": "My Listings",
+    "reservations": "Reservations",
+    "broadcast": "Broadcast",
+    "account": "Account",
+    "help": "Help"
+  },
+  "notImplemented": {
+    "notImplemented": "Not Implemented"
+  },
+  "filters": {
+    "filter": "Filter",
+    "filters": "Filters",
+    "clear": "Clear",
+    "thisWeek": "This Week",
+    "thisMonth": "This Month",
+    "location": "Location"
+  },
+  "login": {
+    "logIn": "Log In"
+  },
+  "reservations": {
+    "pastReservations": "Past Reservations",
+    "total": "Total",
+    "sortBy": "Sort By",
+    "listingName": "Listing Name",
+    "tripDate": "Trip Date",
+    "night": "Night",
+    "nights": "Nights",
+    "guest": "Guest",
+    "guests": "Guests",
+    "travellers": "Travellers",
+    "price": "Price",
+    "status": "Status"
+  },
+  "tripDate": {
+    "checkInDate": "Check In Date",
+    "checkOutDate": "Check Out Date"
+  },
+  "status": {
+    "accepted": "Accepted",
+    "expired": "Expired",
+    "canceled": "Canceled",
+    "declined": "Declined"
+  },
+  "search": {
+    "typeToSearch": "Type to search"
+  },
+  "action": {
+    "logOut": "Log Out",
+    "delete": "Delete",
+    "deleteSelected": "Delete Selected",
+    "selectAll": "Select All",
+    "clearAll": "Clear All"
+  }
+}

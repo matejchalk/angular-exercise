@@ -1,13 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ReservationsComponent } from './reservations/reservations.component';
-import { NotImplementedComponent } from './not-implemented/not-implemented.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/reservations', pathMatch: 'full' },
-  { path: 'reservations', component: ReservationsComponent },
-  { path: '**', component: NotImplementedComponent }
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/reservations'
+  },
+  {
+    path: 'login',
+    loadChildren: './superviews/landing.module#LandingModule'
+  },
+  {
+    path: '',
+    canLoad: [LoginGuard],
+    loadChildren: './superviews/platform.module#PlatformModule'
+  }
 ];
 
 @NgModule({
@@ -16,6 +26,7 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
-  ]
+  ],
+  providers: [LoginGuard]
 })
 export class AppRoutingModule { }

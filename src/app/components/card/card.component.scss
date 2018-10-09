@@ -1,0 +1,29 @@
+.wrapper {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  position: relative;
+  margin: 30px 0;
+
+  .content {
+    overflow: hidden;
+  }
+
+  .trigger {
+    border: none;
+    padding: 0;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 8px;
+    right: 8px;
+    background: transparent url('../../../assets/plus.png');
+  }
+
+  &.collapsed {
+    padding-bottom: 0;
+
+    .trigger {
+      background-image: url('../../../assets/minus.png');
+    }
+  }
+}

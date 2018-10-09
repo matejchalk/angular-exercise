@@ -1,0 +1,13 @@
+* {
+  font-family: 'Trebuchet MS', serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eeffff;
+  margin: 0;
+}
+
+button::-moz-focus-inner { // stylelint-disable-line
+  border: none;
+}

@@ -1,0 +1,6 @@
+<div class="wrapper" [class.collapsed]="!show">
+  <button class="trigger" (click)="show = !show"></button>
+  <div class="content" [@collapseExpand]="show ? 'expanded' : 'collapsed'">
+    <ng-content></ng-content>
+  </div>
+</div>

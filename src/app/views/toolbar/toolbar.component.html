@@ -1,0 +1,11 @@
+<form class="search" [formGroup]="searchForm">
+  <input class="search-input" type="search" placeholder="{{ 'search.typeToSearch' | translate }}..." formControlName="text" />
+  <div class="search-icon"></div>
+</form>
+<div class="menu">
+  <app-dropdown class="languages" [value]="language$ | async" [options]="languages$ | async" prefix="lang." (valueChange)="updateLanguage($event)"></app-dropdown>
+  <app-dropdown class="currencies" [value]="currency$ | async" [options]="currencies$ | async" (valueChange)="updateCurrency($event)"></app-dropdown>
+  <app-dropdown class="user" [options]="userActions" prefix="action." (valueChange)="performUserAction($event)">
+    <img class="avatar" src="https://allinonetricks.com/wp-content/uploads/2017/08/5-7.png" />
+  </app-dropdown>
+</div>

@@ -1,0 +1,80 @@
+.group-label {
+  font-weight: 700;
+  display: block;
+  font-size: medium;
+  margin-bottom: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.clear-filters {
+  border: none;
+  background-color: transparent;
+  color: #0000ff;
+}
+
+.date-input {
+  background: #eeffff url('../../../assets/calendar.png') no-repeat calc(100% - 20px) 50%;
+  padding: 15px 35px 15px 15px;
+  border: none;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.date-pick-options {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .date-pick-option {
+    padding: 10px;
+    background-color: #eeffff;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    flex-basis: 120px;
+
+    &.selected {
+      background-color: #87cefa;
+      color: #00008b;
+    }
+
+    &:last-child {
+      flex-basis: 40px;
+    }
+  }
+}
+
+.checkbox-group-status {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkbox-group-status > *, .checkbox-group-nights > *, .checkbox-group-guests > * {
+  width: 50%;
+}
+
+.checkbox-group-nights, .checkbox-group-guests {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: calc(3 * (24px + 10px));
+}
+
+.checkbox-group-nights {
+  margin-bottom: 15px;
+}
+
+.checkbox-group-location {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-group-location > * {
+  width: 100%;
+}

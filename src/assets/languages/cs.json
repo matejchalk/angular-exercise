@@ -1,0 +1,64 @@
+{
+  "lang": {
+    "en": "Anglicky",
+    "cs": "Česky"
+  },
+  "nav": {
+    "dashboard": "Nástěnka",
+    "inbox": "Pošta",
+    "trips": "Cesty",
+    "myListings": "Moje položky",
+    "reservations": "Rezervace",
+    "broadcast": "Vysílání",
+    "account": "Účet",
+    "help": "Nápověda"
+  },
+  "notImplemented": {
+    "notImplemented": "Není implementováno"
+  },
+  "filters": {
+    "filter": "Filtr",
+    "filters": "Filtery",
+    "clear": "Vymazat",
+    "thisWeek": "Tento týden",
+    "thisMonth": "Tento měsíc",
+    "location": "Místo"
+  },
+  "login": {
+    "logIn": "Přihlásit"
+  },
+  "reservations": {
+    "pastReservations": "Minulé rezervace",
+    "total": "Celkově",
+    "sortBy": "Řadit dle",
+    "listingName": "Název položky",
+    "tripDate": "Datum cesty",
+    "night": "Noc",
+    "nights": "Nocí",
+    "guest": "Host",
+    "guests": "Hostů",
+    "travellers": "Cestující",
+    "price": "Cena",
+    "status": "Stav"
+  },
+  "tripDate": {
+    "checkInDate": "Začátek",
+    "checkOutDate": "Konec"
+  },
+  "status": {
+    "accepted": "Přijatý",
+    "expired": "Propadlý",
+    "canceled": "Zrušený",
+    "declined": "Odmítnutý"
+  },
+  "search": {
+    "typeToSearch": "Vyhledávejte"
+  },
+  "action": {
+    "logOut": "Odhlásit",
+    "delete": "Smazat",
+    "deleteSelected": "Smazat vybrané",
+    "selectAll": "Vybrat vše",
+    "clearAll": "Uvolnit vše"
+  }
+}

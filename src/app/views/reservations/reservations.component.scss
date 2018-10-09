@@ -1,0 +1,238 @@
+:host {
+  display: flex;
+  width: 100%;
+
+  .main {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .header-options {
+        display: flex;
+        align-items: center;
+      }
+
+      .header-options > * {
+        margin-right: 15px;
+      }
+
+      .header-option-type {
+        font-size: x-large;
+        color: #0000ff;
+        display: flex;
+        align-items: center;
+      }
+
+      .header-option-total, .header-option-sort-by-label {
+        color: #808080;
+      }
+
+      .header-option-sort-by {
+        display: flex;
+        align-items: center;
+
+        .header-option-sort-by-label {
+          margin-right: 5px;
+        }
+      }
+
+      .filter-toggle {
+        padding: 10px 49px 10px 15px;
+        color: #0000ff;
+        border: none;
+        border-radius: 5px;
+        background: #ffffff url('../../../assets/filter.png') no-repeat calc(100% - 15px) 50%;
+
+        &.enabled {
+          background-color: #add8e6;
+        }
+      }
+    }
+
+    .reservations-list > * {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+      width: 100%;
+
+      & > *:nth-child(1) {
+        width: 75px;
+      }
+
+      & > *:nth-child(2) {
+        width: calc(100% - 815px);
+      }
+
+      & > *:nth-child(3) {
+        width: 150px;
+      }
+
+      & > *:nth-child(4),
+      & > *:nth-child(5) {
+        width: 80px;
+      }
+
+      & > *:nth-child(6) {
+        width: 200px;
+      }
+
+      & > *:nth-child(7) {
+        width: 120px;
+      }
+
+      & > *:nth-child(8) {
+        width: 100px;
+      }
+
+      & > *:nth-child(9) {
+        width: 50px;
+      }
+    }
+
+    .reservations-list .reservations-list-header {
+      font-size: small;
+      color: #808080;
+
+      .bulk-dropdown-trigger {
+        background-color: #ffffff;
+        text-align: center;
+        font-size: large;
+        width: 25px;
+        line-height: 25px;
+        border-radius: 10%;
+      }
+
+      .page-switcher {
+        display: flex;
+        justify-content: space-between;
+
+        .page-switch-button {
+          background-color: #ffffff;
+          border: none;
+          border-radius: 10%;
+          width: 22px;
+          height: 22px;
+
+          &:disabled {
+            opacity: 0.2;
+          }
+
+          &.left {
+            background: url('../../../assets/arrow-left.png') 50% 50%;
+          }
+
+          &.right {
+            background: url('../../../assets/arrow-right.png') 50% 50%;
+          }
+        }
+      }
+    }
+
+    .reservations-list .reservation-row {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 10px 0;
+
+      .reservation-select {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .listing {
+        display: flex;
+        align-items: center;
+
+        .listing-photo {
+          height: 50px;
+          width: 50px;
+          object-fit: cover;
+          border-radius: 10%;
+          margin-right: 12px;
+        }
+
+        .listing-info {
+          width: calc(100% - 62px);
+        }
+
+        .listing-name,
+        .listing-location {
+          width: 100%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .listing-location {
+          font-size: small;
+          color: #808080;
+        }
+      }
+
+      .trip-date {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .travellers {
+        display: flex;
+        align-items: center;
+
+        .traveller-avatar {
+          height: 40px;
+          width: 40px;
+          object-fit: contain;
+          border-radius: 50%;
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+      }
+
+      [class^='status'] > * {
+        padding: 3px 10px;
+      }
+
+      .status-accepted > * {
+        color: #008000;
+        background-color: #90ee90;
+      }
+
+      .status-expired > * {
+        color: #808080;
+        background-color: #d3d3d3;
+      }
+
+      .status-canceled > * {
+        color: #ff0000;
+        background-color: #ff69b4;
+      }
+
+      .status-declined > * {
+        color: #0000ff;
+        background-color: #add8e6;
+      }
+
+      .button-extra {
+        cursor: pointer;
+        border: none;
+        background: #ffffff url('../../../assets/ellipsis.png');
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .filters {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 400px;
+    margin-left: 30px;
+  }
+}

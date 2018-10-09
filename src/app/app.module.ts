@@ -1,38 +1,41 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
-import { CheckboxComponent } from './checkbox/checkbox.component';
-import { FiltersComponent } from './filters/filters.component';
-import { CardComponent } from './card/card.component';
-import { NavComponent } from './nav/nav.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { ReservationsComponent } from './reservations/reservations.component';
+
 import { AppRoutingModule } from './app-routing.module';
-import { NotImplementedComponent } from './not-implemented/not-implemented.component';
-import { DropdownComponent } from './dropdown/dropdown.component';
+
+import { environment } from '../environments/environment';
+import { reducers, metaReducers } from './reducers';
+import { effects } from './effects';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CheckboxComponent,
-    FiltersComponent,
-    CardComponent,
-    NavComponent,
-    ToolbarComponent,
-    ReservationsComponent,
-    NotImplementedComponent,
-    DropdownComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    HttpClientModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot(effects),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http, 'assets/languages/', '.json'),
+        deps: [HttpClient]
+      }
+    })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

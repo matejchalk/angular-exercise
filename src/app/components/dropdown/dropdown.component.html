@@ -1,0 +1,16 @@
+<div class="header" (click)="show = !show" (mouseenter)="endTimer(); show = !requireClick || show" (mouseleave)="startTimer()">
+  <div #ref><ng-content></ng-content></div>
+  <div *ngIf="ref.childNodes.length === 0">{{ (prefix || '') + value | translate }}</div>
+  <button class="dropdown-icon" *ngIf="!hideIcon"></button>
+</div>
+<div class="options-wrapper">
+  <div class="options" [class.show]="show" (mouseenter)="endTimer()" (mouseleave)="startTimer()">
+    <div
+      *ngFor="let option of options; let i = index"
+      class="option"
+      [class.active]="active === i"
+      (click)="select(i)"
+      (mouseenter)="active = i"
+      (mouseleave)="active = null">{{ (prefix || '') + option | translate }}</div>
+  </div>
+</div>

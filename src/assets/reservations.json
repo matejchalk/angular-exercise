@@ -1,0 +1,206 @@
+[
+  {
+    "id": 1,
+    "listing": {
+      "photo": null,
+      "name": "Japanese Style, Tatami Suite",
+      "location": "Shibuya, Tokyo"
+    },
+    "tripDate": {
+      "checkInDate": "2017-01-24",
+      "checkOutDate": "2017-01-29"
+    },
+    "nights": 4,
+    "guests": 6,
+    "travellers": [{ "avatar": null, "name": "Gavin Andrews" }],
+    "price": 2100000,
+    "status": "accepted"
+  },
+  {
+    "id": 2,
+    "listing": {
+      "photo": null,
+      "name": "4 min koenju 3 Bedroom Suite",
+      "location": "Shinjuku, Tokyo"
+    },
+    "tripDate": {
+      "checkInDate": "2017-03-04",
+      "checkOutDate": "2017-03-12"
+    },
+    "nights": 6,
+    "guests": 4,
+    "travellers": [{ "avatar": null, "name": "Tony Murray" }],
+    "price": 19800000,
+    "status": "accepted"
+  },
+  {
+    "id": 3,
+    "listing": {
+      "photo": null,
+      "name": "4 min koenju 3 Bedroom Suite",
+      "location": "Asakusa, Tokyo"
+    },
+    "tripDate": {
+      "checkInDate": "2017-01-24",
+      "checkOutDate": "2017-01-29"
+    },
+    "nights": 4,
+    "guests": 4,
+    "travellers": [{ "avatar": null, "name": "Jesse Carroll" }],
+    "price": 870000,
+    "status": "expired"
+  },
+  {
+    "id": 4,
+    "listing": {
+      "photo": null,
+      "name": "Japanese Style, Tatami Suite",
+      "location": "Kyoto"
+    },
+    "tripDate": {
+      "checkInDate": "2017-06-02",
+      "checkOutDate": "2017-06-03"
+    },
+    "nights": 6,
+    "guests": 5,
+    "travellers": [{ "avatar": null, "name": "Erik Armstrong" }],
+    "price": 2100000,
+    "status": "accepted"
+  },
+  {
+    "id": 5,
+    "listing": {
+      "photo": null,
+      "name": "Japanese Style, Tatami Suite",
+      "location": "Sendai"
+    },
+    "tripDate": {
+      "checkInDate": "2017-09-09",
+      "checkOutDate": "2017-09-12"
+    },
+    "nights": 1,
+    "guests": 5,
+    "travellers": [{ "avatar": null, "name": "Jim Fields" }],
+    "price": 1550000,
+    "status": "canceled"
+  },
+  {
+    "id": 6,
+    "listing": {
+      "photo": null,
+      "name": "Mesmerizing View Nova Terra",
+      "location": "Kawaguchi, Osaka"
+    },
+    "tripDate": {
+      "checkInDate": "2017-06-02",
+      "checkOutDate": "2017-06-03"
+    },
+    "nights": 1,
+    "guests": 1,
+    "travellers": [{ "avatar": null, "name": "Charlie Strickland" }],
+    "price": 450000,
+    "status": "expired"
+  },
+  {
+    "id": 7,
+    "listing": {
+      "photo": null,
+      "name": "Groups, Families, Asakusa Suite",
+      "location": "Asakusa, Tokyo"
+    },
+    "tripDate": {
+      "checkInDate": "2017-06-02",
+      "checkOutDate": "2017-06-03"
+    },
+    "nights": 5,
+    "guests": 6,
+    "travellers": [{ "avatar": null, "name": "Clyde Mitchell" }],
+    "price": 450000,
+    "status": "expired"
+  },
+  {
+    "id": 8,
+    "listing": {
+      "photo": null,
+      "name": "4 min koenju Bedroom Suite",
+      "location": "Shinjuku, Tokyo"
+    },
+    "tripDate": {
+      "checkInDate": "2017-03-04",
+      "checkOutDate": "2017-03-12"
+    },
+    "nights": 4,
+    "guests": 5,
+    "travellers": [{ "avatar": null, "name": "Juan Norman" }],
+    "price": 2100000,
+    "status": "accepted"
+  },
+  {
+    "id": 9,
+    "listing": {
+      "photo": null,
+      "name": "4 min koenju Bedroom Suite",
+      "location": "Shinjuku, Tokyo"
+    },
+    "tripDate": {
+      "checkInDate": "2017-06-02",
+      "checkOutDate": "2017-06-03"
+    },
+    "nights": 2,
+    "guests": 18,
+    "travellers": [{ "avatar": null, "name": "George Crawford" }],
+    "price": 19800000,
+    "status": "accepted"
+  },
+  {
+    "id": 10,
+    "listing": {
+      "photo": null,
+      "name": "4 min koenju 3 Bedroom Suite",
+      "location": "Asakusa, Tokyo"
+    },
+    "tripDate": {
+      "checkInDate": "2017-09-09",
+      "checkOutDate": "2017-09-12"
+    },
+    "nights": 6,
+    "guests": 5,
+    "travellers": [{ "avatar": null, "name": "Austin Spencer" }],
+    "price": 870000,
+    "status": "accepted"
+  },
+  {
+    "id": 11,
+    "listing": {
+      "photo": null,
+      "name": "Mesmerizing View Nova Terra",
+      "location": "Shinjuku, Tokyo"
+    },
+    "tripDate": {
+      "checkInDate": "2017-01-24",
+      "checkOutDate": "2017-01-29"
+    },
+    "nights": 1,
+    "guests": 2,
+    "travellers": [{ "avatar": null, "name": "Harry Ray" }],
+    "price": 2000000,
+    "status": "canceled"
+  },
+  {
+    "id": 12,
+    "listing": {
+      "photo": null,
+      "name": "Groups, Families, Asakusa Suite",
+      "location": "Sendai"
+    },
+    "tripDate": {
+      "checkInDate": "2017-12-25",
+      "checkOutDate": "2017-12-31"
+    },
+    "nights": 5,
+    "guests": 18,
+    "travellers": [{ "avatar": null, "name": "Jeremy Maxwell" }],
+    "price": 870000,
+    "status": "expired"
+  }
+]

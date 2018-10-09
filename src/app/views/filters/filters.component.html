@@ -1,0 +1,56 @@
+<form [formGroup]="filtersForm">
+  <div class="header">
+    <span class="group-label">{{ 'filters.filters' | translate }}</span>
+    <button  class="clear-filters" type="button" (click)="clearAll()">{{ 'filters.clear' | translate }}</button>
+  </div>
+  <app-card>
+    <div class="header">
+      <span class="group-label">{{ 'reservations.tripDate' | translate }}</span>
+      <button class="clear-filters" type="button" (click)="clearTripDate()">{{ 'filters.clear' | translate }}</button>
+    </div>
+    <div id="trip-date" formGroupName="tripDate">
+      <input class="date-input" formControlName="checkInDate" placeholder="{{ 'tripDate.checkInDate' | translate }}" />
+      <input class="date-input" formControlName="checkOutDate" placeholder="{{ 'tripDate.checkOutDate' | translate }}" />
+      <div class="date-pick-options">
+        <div class="date-pick-option" [class.selected]="datePickOptions['thisWeek']" (click)="selectDatePickOption('thisWeek')">{{ 'filters.thisWeek' | translate }}</div>
+        <div class="date-pick-option" [class.selected]="datePickOptions['thisMonth']" (click)="selectDatePickOption('thisMonth')">{{ 'filters.thisMonth' | translate }}</div>
+        <div class="date-pick-option" [class.selected]="datePickOptions['plus3']" (click)="selectDatePickOption('plus3')">+3</div>
+      </div>
+    </div>
+  </app-card>
+  <app-card>
+    <span class="group-label">{{ 'reservations.status' | translate }}</span>
+    <div class="checkbox-group-status" formGroupName="status">
+      <app-checkbox formControlName="accepted" label="{{ 'status.accepted' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="expired" label="{{ 'status.expired' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="canceled" label="{{ 'status.canceled' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="declined" label="{{ 'status.declined' | translate }}"></app-checkbox>
+    </div>
+  </app-card>
+  <app-card>
+    <span class="group-label">{{ 'reservations.nights' | translate }}</span>
+    <div class="checkbox-group-nights" formGroupName="nights">
+      <app-checkbox formControlName="one" label="1 {{ 'reservations.night' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="two" label="2 {{ 'reservations.nights' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="three" label="3 {{ 'reservations.nights' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="four" label="4 {{ 'reservations.nights' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="five" label="5 {{ 'reservations.nights' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="overFive" label=">5 {{ 'reservations.nights' | translate }}"></app-checkbox>
+    </div>
+    <span class="group-label">{{ 'reservations.guests' | translate }}</span>
+    <div class="checkbox-group-guests" formGroupName="guests">
+      <app-checkbox formControlName="one" label="1 {{ 'reservations.guest' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="two" label="2 {{ 'reservations.guests' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="three" label="3 {{ 'reservations.guests' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="four" label="4 {{ 'reservations.guests' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="five" label="5 {{ 'reservations.guests' | translate }}"></app-checkbox>
+      <app-checkbox formControlName="overFive" label=">5 {{ 'reservations.guests' | translate }}"></app-checkbox>
+    </div>
+  </app-card>
+  <app-card>
+    <span class="group-label">{{ 'filters.location' | translate }}</span>
+    <div class="checkbox-group-location" formGroupName="location">
+      <app-checkbox *ngFor="let location of (locations$ | async)" [formControlName]="location" [label]="location"></app-checkbox>
+    </div>
+  </app-card>
+</form>

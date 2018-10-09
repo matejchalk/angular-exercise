@@ -1,8 +1,0 @@
-<form id="search" [formGroup]="searchForm">
-  <input type="search" placeholder="Type to search..." formControlName="text" />
-  <div id="search-icon"></div>
-</form>
-<div id="extras">
-  <app-dropdown id="languages" [options]="languages"></app-dropdown>
-  <app-dropdown id="currencies" [options]="currencies" (valueChange)="updateCurrency($event)"></app-dropdown>
-</div>
